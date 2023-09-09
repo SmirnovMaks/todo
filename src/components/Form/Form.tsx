@@ -1,11 +1,11 @@
-import { useState } from 'react'
+import { SyntheticEvent, useState } from 'react'
 import s from './style.module.scss'
 
 export const Form = (props: { createNewToDo: Function }) => {
     const [text, setText] = useState<string>('')
 
-    const formSubmit = () => {
-        console.log(" ti loh");
+    const formSubmit = (event: SyntheticEvent) => {
+        event.preventDefault()
 
         if (text) {
             props.createNewToDo(text)
