@@ -1,8 +1,11 @@
+import { useSelector } from "react-redux"
 import { ListItem } from "../components/ListItem/ListItem"
 import { ToDo } from "../models/todoItems"
+import { RootState } from "../store"
 
 
-export const ViewList = ({ todoList }: { todoList: ToDo[] }) => {
+export const ViewList = () => {
+    const todoList = useSelector((state: RootState) => state.todoList.todos)
     return (
         <>
             {

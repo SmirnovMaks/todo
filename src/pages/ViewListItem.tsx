@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
 import { ToDo } from "../models/todoItems"
 import { useNavigate, useParams } from "react-router-dom"
+import { useSelector } from "react-redux"
+import { RootState } from "../store"
 
-export const ViewListItem = ({ todoList }: { todoList: ToDo[] }) => {
-
+export const ViewListItem = () => {
+    const todoList = useSelector((state: RootState) => state.todoList.todos)
 
 
     const { id } = useParams()
