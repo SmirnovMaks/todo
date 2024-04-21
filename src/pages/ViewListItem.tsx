@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { ToDo } from "../models/todoItems"
-import { useNavigate, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import { useSelector } from "react-redux"
 import { RootState } from "../store"
 
@@ -25,6 +25,7 @@ export const ViewListItem = () => {
     return (
         <div className="container">
             <h1>{todo?.text}</h1>
+            <Link to='/list'>back to list</Link >
         </div>
     )
 }
